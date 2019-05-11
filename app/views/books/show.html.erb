@@ -1,5 +1,19 @@
-<p><strong>Title:</strong></p>
-<p><strong>Body:</strong></p>
-<a href="/edit">Edit</a>
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
+
+<p>
+	<strong>Title:</strong><%= @book.title %>
+</p>
+
+
+<p><strong>Body:</strong><%= @book.title %></p>
+
+
+<%= link_to "Edit" , edit_book_path(@book.id) , class: "edit_#{@book.id}" %>
 |
-<a href="/books">Back</a>
+<%= link_to "Back" , "/books" , class: "back" %>
